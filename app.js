@@ -32,13 +32,9 @@ app.use(cookieParser());
 
 
 
-app.get('/', (req, res) => {
-  // Don't serve index.html for API routes
-  if (req.path.startsWith('/api')) {
-    return res.status(404).json({ message: 'API route not found' });
-  }
-  
-  // Serve index.html for all non-API routes (React Router handles them)
+app.use(express.static(path.join(__dirname, '/vtuf/dist')));
+
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'vtuf', 'dist', 'index.html'));
 });
 
