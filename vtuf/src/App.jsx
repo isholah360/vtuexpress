@@ -1,4 +1,4 @@
-// src/App.js
+
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -7,7 +7,7 @@ import Signup from './components/Signup';
 import Signin from './components/signin';
 import Dashboard from './components/dashboard';
 import FundWallet from './components/wallet';
-import BuyAirtime from './components/BuyAirtime';
+// import BuyAirtime from './components/BuyAirtime';
 import BuyData from './components/BuyData';
 import Transaction from './components/transaction';
 import Navigation from './components/navigation';
@@ -92,7 +92,7 @@ const App = () => {
                   <Routes>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/fund-wallet" element={<FundWallet />} />
-                    <Route path="/buy-airtime" element={<BuyAirtime />} />
+                    {/* <Route path="/buy-airtime" element={<BuyAirtime />} /> */}
                     <Route path="/buy-data" element={<BuyData />} />
                     <Route path="/history" element={<Transaction />} />
                     <Route path="/" element={<Navigate to="/dashboard" replace />} />
