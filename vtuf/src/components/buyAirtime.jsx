@@ -44,7 +44,7 @@ const BuyAirtime = ({ updateUserBalance, addTransaction }) => {
   useEffect(() => {
     const fetchBalance = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/wallet/balance", {
+        const res = await fetch("https://vtuexpress.onrender.com/api/wallet/balance", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -83,7 +83,7 @@ const BuyAirtime = ({ updateUserBalance, addTransaction }) => {
     setIsProcessing(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/airtime/buy", {
+      const response = await fetch("https://vtuexpress.onrender.com/api/airtime/buy", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

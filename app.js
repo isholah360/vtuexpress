@@ -24,7 +24,7 @@ const app = express();
 app.use(helmet());
 app.use(cors({
   origin: 'http://localhost:5173', // Your React frontend URL
-  credentials: true               // <-- This is important
+  credentials: true,           // <-- This is important
 }));
 app.use(morgan('dev'));
 app.use(express.json({ limit: '10mb' }));

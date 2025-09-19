@@ -21,7 +21,7 @@ const FundWallet = () => {
     useEffect(() => {
     const fetchBalance = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/wallet/balance', {
+        const res = await fetch('https://vtuexpress.onrender.com/api/wallet/balance', {
           headers: {
             'Content-Type': 'application/json'
           },
@@ -64,7 +64,7 @@ const FundWallet = () => {
     try {
       console.log("Verifying payment with reference:", reference);
 
-      const response = await fetch("https://vtuexpress.vercel.app/api/wallet/verify", {
+      const response = await fetch("https://vtuexpress.onrender.com/api/wallet/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -140,7 +140,7 @@ const FundWallet = () => {
     setIsProcessing(true);
 
     try {
-      const response = await fetch("https://vtuexpress.vercel.app/api/wallet/fund", {
+      const response = await fetch("https://vtuexpress.onrender.com/api/wallet/fund", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

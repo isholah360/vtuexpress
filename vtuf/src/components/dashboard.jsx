@@ -14,7 +14,7 @@ const [error, setError] = useState('');
   useEffect(() => {
   const fetchBalance = async () => {
     try {
-      const res = await fetch('https://vtuexpress.vercel.app/api/wallet/balance', {
+      const res = await fetch('https://vtuexpress.onrender.com/api/wallet/balance', {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -22,7 +22,7 @@ const [error, setError] = useState('');
       });
       const data = await res.json();
       if (res.ok && data.success) {
-        setWalletBalance(data.data.balance);
+        setWalletBalance(data.data?.balance);
       } else {
         console.error('Failed to fetch balance:', data.message);
         setError(data.message || 'Failed to fetch balance');
@@ -40,7 +40,7 @@ const [error, setError] = useState('');
   const fetchTransactions = async () => {
     setLoading(true);
     try {
-      const res = await fetch('https://vtuexpress.vercel.app/api/wallet/transactions', {
+      const res = await fetch('https://vtuexpress.onrender.com/api/wallet/transactions', {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -51,7 +51,7 @@ const [error, setError] = useState('');
 
       if (!res.ok) throw new Error(data.message || 'Fetch failed');
 
-      setTransaction(data.data.transactions || []);
+      setTransaction(data.data?.transactions || []);
     } catch (err) {
       console.error(err.message);
       setError(err.message || 'Something went wrong');

@@ -23,7 +23,7 @@ const Signin = () => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch("https://vtuexpress.onrender.com/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // ✅ Ensure cookie is sent/received
@@ -36,15 +36,15 @@ const Signin = () => {
       if (!res.ok || !data.success) {
         throw new Error(data.message || "Login failed");
       }
-
+     console.log(data.token)
       // Destructure user from response
       const { user } = data;
 
       // Save only user (not token) in localStorage
       localStorage.setItem("user", JSON.stringify(user));
-
+      localStorage.setItem("jwt", data.token);
       // Update Redux state
-      dispatch(loginSuccess({ token: "cookie-based", user }));
+      dispatch(loginSuccess({ token: data.token, user }));
 
       // Navigate after successful login
       navigate("/dashboard");
@@ -93,7 +93,7 @@ const Signin = () => {
         </button>
 
         <p className="mt-4 text-sm text-center">
-          Don&apos;t have an account? <a href="/signup" className="text-blue-600">Sign Up</a>
+          Don&apos;t have an account? <a href="/register" className="text-blue-600">Sign Up</a>
         </p>
       </form>
     </div>

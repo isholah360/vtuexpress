@@ -19,7 +19,7 @@ const authSlice = createSlice({
       state.token = null;
       state.user = null;
       state.isAuthenticated = false;
-      localStorage.removeItem('token');
+      localStorage.removeItem('jwt');
       localStorage.removeItem('user');
     },
     // ADD THIS NEW ACTION
