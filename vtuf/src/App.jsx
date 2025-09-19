@@ -8,7 +8,7 @@ import Signin from './components/signin';
 import Dashboard from './components/dashboard';
 import FundWallet from './components/wallet';
 import BuyAirtime from './components/buyAirtime';
-import BuyData from './components/buyData';
+import BuyData from './buyData';
 import Transaction from './components/transaction';
 import Navigation from './components/navigation';
 
