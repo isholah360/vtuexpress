@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "start": "node server.js",
-    "build":"npm run install && npm install --prefix vtuf && npm run build --prefix vtuf"
+    "build":"npm install && npm install --prefix vtuf && npm run build --prefix vtuf"
   },
   "keywords": [],
   "author": "",
