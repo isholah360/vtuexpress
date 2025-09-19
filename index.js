@@ -44,6 +44,10 @@ app.post('/api/wallet/webhook/paystack',
   express.raw({ type: 'application/json' }), 
   require('./controllers/walletController').handlePaystackWebhook
 );
+app.get("/", (req, res) => {
+   res.send("API is running...");
+})
+ 
 app.use('/api/wallet', walletRoutes);
 app.use('/api/airtime', airtimeRoutes);
 app.use('/api/data', dataRoutes);
