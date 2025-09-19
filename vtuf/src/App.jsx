@@ -7,8 +7,8 @@ import Signup from './components/Signup';
 import Signin from './components/signin';
 import Dashboard from './components/dashboard';
 import FundWallet from './components/wallet';
-// import BuyAirtime from './components/BuyAirtime';
-import BuyData from './components/BuyData';
+import BuyAirtime from './components/buyAirtime';
+import BuyData from './components/buyData';
 import Transaction from './components/transaction';
 import Navigation from './components/navigation';
 
@@ -92,7 +92,7 @@ const App = () => {
                   <Routes>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/fund-wallet" element={<FundWallet />} />
-                    {/* <Route path="/buy-airtime" element={<BuyAirtime />} /> */}
+                    <Route path="/buy-airtime" element={<BuyAirtime />} />
                     <Route path="/buy-data" element={<BuyData />} />
                     <Route path="/history" element={<Transaction />} />
                     <Route path="/" element={<Navigate to="/dashboard" replace />} />
