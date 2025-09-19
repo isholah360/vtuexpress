@@ -32,11 +32,11 @@ app.use(cookieParser());
 
 
 
-// app.use(express.static(path.join(__dirname, '/vtuf/dist')));
+app.use(express.static(path.join(__dirname, '/vtuf/dist')));
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'vtuf', 'dist', 'index.html'));
-// });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'vtuf', 'dist', 'index.html'));
+});
 
 // Routes
 app.post('/api/wallet/webhook/paystack', 
