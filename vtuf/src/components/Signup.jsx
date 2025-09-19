@@ -1,7 +1,7 @@
 // src/components/Signup.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signup } from '../../../services/api';
+
 
 const Signup = () => {
   const [formData, setFormData] = useState({

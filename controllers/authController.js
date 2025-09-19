@@ -17,9 +17,9 @@ const login = async (req, res) => {
     
     res.cookie("jwt", result.token, {
       httpOnly: true,
-      maxAge: 360000000,
+      maxAge: 3600000000,
       secure: process.env.NODE_ENV === 'production',
-      sameSite: 'strict'
+      sameSite: 'none'
     });
 
   

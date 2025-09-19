@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/User");
 
 // Replace with env var in production
-const JWT_EXPIRES_IN = "2h";
+const JWT_EXPIRES_IN = "1h";
 
 const register = async ({ email, phone, password }) => {
   const existingUser = await User.findOne({ email });

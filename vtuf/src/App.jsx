@@ -21,7 +21,7 @@ const App = () => {
   useEffect(() => {
     const checkAuthStatus = async () => {
       try {
-        const response = await fetch('/api/auth/profile', {
+        const response = await fetch('/api/wallet/transactions', {
           method: 'GET',
           credentials: 'include', // Send cookie
         });
