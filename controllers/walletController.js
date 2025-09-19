@@ -42,7 +42,7 @@ exports.initializeFundWallet = async (req, res) => {
       email,
       parseFloat(amount),
       reference,
-      // `${process.env.REACT_APP_API_URL || 'http://localhost:5173'}/fund-wallet`
+      `${process.env.REACT_APP_API_URL || 'http://localhost:5173'}/fund-wallet`
     );
 
 
