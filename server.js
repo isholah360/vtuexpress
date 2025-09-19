@@ -1,10 +1,11 @@
-const app = require('./app');
+const app = require('./index');
 const connectDB = require('./db/connection');
 const dotenv = require('dotenv');
-const path = require('path');
+
 const Port = process.env.PORT || 5000;
 const cookieParser = require('cookie-parser');
 app.use(cookieParser());
+
 
 // Connect to DB
 connectDB();
