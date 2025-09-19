@@ -82,8 +82,8 @@ const FundWallet = () => {
           setVerificationResult({
             success: true,
             message: "Payment successful! Your wallet has been funded.",
-            amount: data.data.amount,
-            newBalance: data.data.balance
+            amount: data.data?.amount,
+            newBalance: data.data?.balance
           });
           
           // Update wallet balance in Redux store
@@ -148,7 +148,7 @@ const FundWallet = () => {
         },
         body: JSON.stringify({
           amount: parseFloat(amount),
-          email: "mike360@gmail.com" // Use email from Redux store
+          email: user.email // Use email from Redux store
         }),
         credentials: "include",
       });
