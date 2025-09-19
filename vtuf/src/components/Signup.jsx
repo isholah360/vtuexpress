@@ -26,7 +26,7 @@ const Signup = () => {
     setError('');
 
     try {
-         const res = await fetch("https://vtuexpress.vercel.app/api/auth/register", {
+         const res = await fetch("https://vtuexpress-sxqb.vercel.app/api/auth/register", {
            method: "POST",
            headers: { "Content-Type": "application/json" },
            credentials: "include", // ✅ Ensure cookie is sent/received
@@ -34,6 +34,7 @@ const Signup = () => {
          });
    
          const data = await res.json();
+         console.log(data)
          console.log("Login response:", data);
    
          if (!res.ok || !data.success) {

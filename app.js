@@ -20,7 +20,6 @@ const authRoutes = require('./routes/authRoutes');
 const app = express();
 
 
-
 // Middleware
 app.use(helmet());
 app.use(cors({
@@ -31,13 +30,13 @@ app.use(morgan('dev'));
 app.use(express.json({ limit: '10mb' }));
 app.use(cookieParser());
 
-// const __dirname = path.resolve();
 
-// app.use(express.static(path.join(__dirname, '/vtuf/dist')));
 
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, '/vtuf/dist', 'index.html'));
-// });
+app.use(express.static(path.join(__dirname, '/vtuf/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'vtuf', 'dist', 'index.html'));
+});
 
 // Routes
 app.post('/api/wallet/webhook/paystack', 
