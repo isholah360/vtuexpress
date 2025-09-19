@@ -13,7 +13,7 @@ const TransactionHistory = () => {
       setError('');
       try {
         const token = localStorage.getItem('jwt');
-        const res = await fetch('http://localhost:5000/api/wallet/transaction', {
+        const res = await fetch('https://vtuexpress.vercel.app/api/wallet/transaction', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`

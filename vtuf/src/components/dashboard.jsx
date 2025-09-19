@@ -14,7 +14,7 @@ const [error, setError] = useState('');
   useEffect(() => {
   const fetchBalance = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/wallet/balance', {
+      const res = await fetch('https://vtuexpress.vercel.app/api/wallet/balance', {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -40,7 +40,7 @@ const [error, setError] = useState('');
   const fetchTransactions = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:5000/api/wallet/transactions', {
+      const res = await fetch('https://vtuexpress.vercel.app/api/wallet/transactions', {
         headers: {
           'Content-Type': 'application/json'
         },

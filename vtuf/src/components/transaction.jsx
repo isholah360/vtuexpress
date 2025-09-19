@@ -10,7 +10,7 @@ function Transaction() {
  useEffect(() => {
   const fetchTransactions = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/wallet/transactions', {
+      const res = await fetch('https://vtuexpress.vercel.app/api/wallet/transactions', {
         headers: {
           'Content-Type': 'application/json'
         },

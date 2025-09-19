@@ -44,7 +44,7 @@ const BuyData = ({ user, updateUserBalance, addTransaction }) => {
   useEffect(() => {
     const fetchBalance = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/wallet/balance", {
+        const res = await fetch("https://vtuexpress.vercel.app/api/wallet/balance", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -74,7 +74,7 @@ const BuyData = ({ user, updateUserBalance, addTransaction }) => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/data/plans/${network}`
+        `https://vtuexpress.vercel.app/api/data/plans/${network}`
       );
       const data = await res.json();
 
@@ -106,7 +106,7 @@ const BuyData = ({ user, updateUserBalance, addTransaction }) => {
     setIsProcessing(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/data/buy", {
+      const response = await fetch("https://vtuexpress.vercel.app/api/data/buy", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
