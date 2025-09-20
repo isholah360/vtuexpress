@@ -11,6 +11,7 @@ const Signup = () => {
     password: ''
   });
   const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState('');
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const Signup = () => {
     setError('');
 
     try {
-         const res = await fetch("https://vtuexpress.onrender.com/api/auth/register", {
+         const res = await fetch("http://localhost:5000/api/auth/register", {
            method: "POST",
            headers: { "Content-Type": "application/json" },
            credentials: "include", // ✅ Ensure cookie is sent/received
@@ -36,13 +37,20 @@ const Signup = () => {
          const data = await res.json();
          console.log(data)
          console.log("register:", data);
+
+          if (data.message === "User registered successfully") {
+           navigate("/login");
+         }
+         if (data.error === "User already exists with this email") {
+           throw new Error(data.message || "User already exists with this email");
+         }
    
          if (!res.ok || !data.success) {
            throw new Error(data.message || "register failed");
          }
    
          // Navigate after successful login
-         navigate("/login");
+         
        } catch (err) {
          console.error("Login error:", err);
          setError(err.message || "Invalid email or password");
