@@ -38,6 +38,54 @@ const login = async (req, res) => {
   }
 };
 
+const profile  = async (req, res) => {
+  try {
+    console.log('Profile endpoint called, user ID:', req.user?.userId);
+    
+    // req.user should be set by your authenticateToken middleware
+    const userId = req.user?.userId;
+    
+    if (!userId) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'User not authenticated' 
+      });
+    }
+
+    // Find user in database (adjust based on your User model)
+    const user = await User.findById(userId).select('-password'); // Exclude password
+    
+    if (!user) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'User not found' 
+      });
+    }
+
+    // Get wallet balance if you have a separate wallet collection
+    // const wallet = await Wallet.findOne({ userId });
+    
+    res.json({ 
+      success: true, 
+      user: {
+        _id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        phone: user.phone,
+        walletBalance: user.walletBalance || 0, // or wallet?.balance || 0
+        createdAt: user.createdAt
+      }
+    });
+  } catch (error) {
+    console.error('Profile fetch error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Server error' 
+    });
+  }
+}
+
 const logout = (req, res) => {
   res.clearCookie("token");
   res.status(200).json({ message: "Logged out successfully" });
@@ -51,5 +99,6 @@ module.exports = {
   register,
   login,
   logout,
-  getMe
+  getMe, 
+  profile
 };
