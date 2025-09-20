@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname, '/vtuf/dist')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'vtuf', 'dist', 'index.html'));
 });
-app.get('/fund-wallet', (req, res) => {
+app.get('/dashboard', (req, res) => {
   res.sendFile(path.join(__dirname, 'vtuf', 'dist', 'index.html'));
 });
 
