@@ -5,7 +5,7 @@ const User = require("../models/User");
 // Replace with env var in production
 const JWT_EXPIRES_IN = "1h";
 
-const register = async ({ email, phone, password }) => {
+const register = async ({ email, phone, password, username }) => {
   const existingUser = await User.findOne({ email });
   if (existingUser) {
     throw new Error("User already exists with this email");
@@ -15,6 +15,7 @@ const register = async ({ email, phone, password }) => {
 
   const newUser = new User({
     email,
+    username,
     phone,
     password: hashedPassword,
   });

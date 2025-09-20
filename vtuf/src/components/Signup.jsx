@@ -35,23 +35,14 @@ const Signup = () => {
    
          const data = await res.json();
          console.log(data)
-         console.log("Login response:", data);
+         console.log("register:", data);
    
          if (!res.ok || !data.success) {
-           throw new Error(data.message || "Login failed");
+           throw new Error(data.message || "register failed");
          }
    
-         // Destructure user from response
-         const { user } = data;
-   
-         // Save only user (not token) in localStorage
-         localStorage.setItem("user", JSON.stringify(user));
-   
-         // Update Redux state
-         dispatch(loginSuccess({ token: "cookie-based", user }));
-   
          // Navigate after successful login
-         navigate("/dashboard");
+         navigate("/login");
        } catch (err) {
          console.error("Login error:", err);
          setError(err.message || "Invalid email or password");
@@ -59,6 +50,10 @@ const Signup = () => {
          setLoading(false);
        }
   };
+
+  
+  console.log(formData)
+
 
   return (
     <div className="max-w-md mx-auto mt-16 p-8 bg-white rounded-lg shadow-md font-sans">
