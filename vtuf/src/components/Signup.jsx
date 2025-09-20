@@ -121,7 +121,7 @@ const Signup = () => {
 
       <p className="text-center text-gray-600 mt-6">
         Already have an account?{' '}
-        <a href="/signin" className="text-blue-600 hover:underline">
+        <a onClick={() => navigate('/login')}className="text-blue-600 hover:underline">
           Sign In
         </a>
       </p>

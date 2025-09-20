@@ -92,8 +92,8 @@ const Signin = () => {
           {loading ? "Signing in..." : "Sign In"}
         </button>
 
-        <p className="mt-4 text-sm text-center">
-          Don&apos;t have an account? <a href="/register" className="text-blue-600">Sign Up</a>
+        <p className="mt-4 text-sm text-center" >
+          Don&apos;t have an account? <a className="text-blue-600" onClick={() => navigate('/register')}>Sign Up</a>
         </p>
       </form>
     </div>
