@@ -93,7 +93,7 @@ const FAq = () => {
             {/* Placeholder Image (Replace with real image URL) */}
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="/grp.png" 
                 alt="Customer using VTU service" 
                 className="w-full h-auto object-cover"
               />

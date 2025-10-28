@@ -1,4 +1,5 @@
 import React from "react";
+import signs from '../../public/sign.png'
 
 const HowItWorks = () => {
   return (
@@ -69,7 +70,7 @@ const HowItWorks = () => {
           <div className="lg:w-1/2 hidden lg:block">
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src={signs}
                 alt="VTU App Interface"
                 className="w-full h-auto object-cover"
               />

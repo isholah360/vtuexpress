@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row gap-12">
 
-          {/* Left: Logo + Tagline + App Badges */}
+       
           <div className="lg:w-1/3 space-y-6">
             <div className="flex items-center">
               <div className="w-8 h-8 bg-black rounded-full mr-2"></div>
-              <h2 className="text-xl font-bold text-gray-900">VTU Hub</h2>
+              <h2 className="text-xl font-bold text-gray-900">VTUExpress</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
               VTUExpress is Nigeria’s fastest and most secure virtual top-up platform for airtime, data, cable TV, and electricity payments.
