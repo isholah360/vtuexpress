@@ -218,14 +218,9 @@ const Dashboard = ({ user, transactions = [], setActiveTab }) => {
   const navigate = useNavigate();
   const location = useLocation();
   
-  console.log('User data in Dashboard:', token);
-
-  // Payment verification on dashboard load
   useEffect(() => {
     const checkForPaymentCallback = () => {
-      console.log('=== CHECKING FOR PAYMENT CALLBACK ON DASHBOARD ===');
-      console.log('Current URL:', window.location.href);
-      console.log('Location search:', location.search);
+    
       
       // Check URL parameters for payment callback
       const urlParams = new URLSearchParams(location.search);

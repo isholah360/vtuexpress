@@ -11,6 +11,7 @@ import BuyAirtime from './components/buyAirtime';
 import BuyData from './buyData';
 import Transaction from './components/transaction';
 import Navigation from './components/navigation';
+import Home from './home/home';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -80,6 +81,7 @@ const App = () => {
         {/* Public Routes */}
         <Route path="/register" element={<Signup />} />
         <Route path="/login" element={<Signin />} />
+        <Route path="/" element={<Home />} />
 
         {/* Protected Routes */}
         <Route
